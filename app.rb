@@ -5,7 +5,15 @@ require './lib/game'
 class RPS < Sinatra::Base
 	enable :sessions
 	  get '/' do
-	    erb :index
+	    erb :first
+    end
+
+    get '/play-one' do
+      erb :index
+    end
+
+    get '/play-two' do
+      erb :game2
     end
     
     post '/name' do
@@ -13,9 +21,21 @@ class RPS < Sinatra::Base
       redirect '/play'
     end
 
+    post '/name-two' do
+      session[:name1_message] = params[:player]
+      session[:name2_message] = params[:player2]
+      redirect '/playplay'
+    end
+
     get '/play' do
       @name = session[:name_message]
 	    erb :play
+    end
+
+    get '/playplay' do
+      @name1 = session[:name1_message]
+      @name2 = session[:name2_message]
+	    erb :playplay
     end
     
     post '/move' do
