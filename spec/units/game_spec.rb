@@ -1,6 +1,7 @@
 require 'game'
 
 describe Game do
+
   describe "Game for One" do
   let(:game) { Game.new("Scissors") }
   

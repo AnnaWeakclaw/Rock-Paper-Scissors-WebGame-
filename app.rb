@@ -49,9 +49,9 @@ class RPS < Sinatra::Base
     post '/move-two' do
       game = Game.new(params[:move1], params[:move2])
       session[:win_message] = game.score
-      session[:option] = game.give_image(game.option)
-      session[:user] = game.give_image(game.users_choice)
-      redirect '/score'
+      session[:second_player] = game.give_image(game.option)
+      session[:first_palyer] = game.give_image(game.users_choice)
+      redirect '/score-two'
     end
 
     get '/score' do
@@ -59,6 +59,13 @@ class RPS < Sinatra::Base
       @option = session[:option]
       @choice = session[:user]
       erb :score
+    end
+
+    get '/score-two' do
+      @message = session[:win_message]
+      @option = session[:second_player]
+      @choice = session[:first_palyer]
+      erb :score2
     end
 
 	  # start the server if ruby file executed directly
