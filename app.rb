@@ -33,8 +33,8 @@ class RPS < Sinatra::Base
     end
 
     get '/playplay' do
-      @name1 = session[:name1_message]
-      @name2 = session[:name2_message]
+      @player1 = Player.create(session[:name1_message])
+      @player2 = Player.create(session[:name2_message])
 	    erb :playplay
     end
     
