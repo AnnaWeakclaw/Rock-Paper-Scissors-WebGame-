@@ -33,11 +33,15 @@ class Game
     winner = ""
        # select is probably not the best choice here but what is?
     @template.select { |configuration|
-      if configuration[:pair].include?(@users_choice) && configuration[:pair].include?(@option)
+      if pair_includes?(configuration, @users_choice) && pair_includes?(configuration, @option)
         configuration[:win] == option ? winner = "You lost Ha Ha" : winner = "You actually won!"
       end
       }
       winner 
+  end
+
+  def pair_includes?(config, choice_option)
+    config[:pair].include?(choice_option)
   end
 
   def random_item 
