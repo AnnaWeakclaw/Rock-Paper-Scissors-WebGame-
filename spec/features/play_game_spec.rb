@@ -6,9 +6,10 @@
 
     scenario "player can win with rock" do
       sign_and_play
-      select "Rock", from: "movee"
+      select "Scissors", from: "movee"
+      srand(344)
       click_button "Submit my choice"
-      expect(page).to have_content "That was fun!" 
+      expect(page).to have_content "You actually won" 
     end
 
     scenario "player can play again" do
