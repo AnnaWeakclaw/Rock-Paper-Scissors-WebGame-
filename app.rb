@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require './lib/game'
+require './lib/player'
 	
 class RPS < Sinatra::Base
 	enable :sessions
@@ -62,6 +63,8 @@ class RPS < Sinatra::Base
     end
 
     get '/score-two' do
+      @player1 = Player.create(session[:name1_message])
+      @player2 = Player.create(session[:name2_message])
       @message = session[:win_message]
       @option = session[:second_player]
       @choice = session[:first_palyer]

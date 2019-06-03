@@ -5,15 +5,15 @@
 
   <link rel=stylesheet type=text/css href=/main.css/>
   <body>
-<h2><%=@player1%> played: 
+<h2><%=@player1.name%> played: 
 <img src="<%=@choice%>" class="result">
-and <%=@player2%> played 
+and <%=@player2.name%> played 
 <img src="<%=@option%>" class="result"></h2>
 <h1><%=@message%></h1><br>
 <h1>That was fun! </h1>
 
 <h2>Do you wanna play again?</h2>
-<form action="/play" method="get">
+<form action="/playplay" method="get">
 <input type="submit" name="wanna-Play" value="Yes"> 
 </form>
 
