@@ -1,6 +1,7 @@
 class Game
   attr_reader :option, :users_choice
-  def initialize(users_choice, second_human = "Nothing")
+  def initialize(player_name, users_choice, second_human = "Nothing")
+    # it this too much happening in initialize?
     @options = ["Rock", "Paper", "Scissors"]
     @users_choice = users_choice
     @second_human = second_human
@@ -15,6 +16,7 @@ class Game
       {:item => "Paper", :img => "/images/paper.jpg"},
       {:item => "Scissors", :img => "/images/scissors.jpg"}
     ]
+    @player1_name = player_name
   end
 
   def score
@@ -38,7 +40,7 @@ class Game
        # select is probably not the best choice here but what is?
     @template.select { |configuration|
       if pair_includes?(configuration, @users_choice) && pair_includes?(configuration, @option)
-        configuration[:win] == option ? winner = "You lost Ha Ha" : winner = "You actually won!"
+        configuration[:win] == option ? winner = "#{@player1_name} lost Ha Ha" : winner = "#{@player1_name} actually won!"
       end
       }
       winner 

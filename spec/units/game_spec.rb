@@ -3,7 +3,7 @@ require 'game'
 describe Game do
 
   describe "Game for One" do
-  let(:game) { Game.new("Scissors") }
+  let(:game) { Game.new("Bob", "Scissors") }
   
   # random_item is private and tested as part of score method
   # it "can randomly generate Rock/Paper/Scissors" do
@@ -14,17 +14,17 @@ describe Game do
   it "can determine who is a winner" do
     srand(344)
     # random is Paper and users is Scissors so the user has won
-    expect(game.score).to eq("You actually won!")
+    expect(game.score).to eq("Bob actually won!")
   end
 
   it "can determine who is a winner" do
     srand(156)
     # random is Rock and users is Scissors so the user has lost
-    expect(game.score).to eq("You lost Ha Ha")
+    expect(game.score).to eq("Bob lost Ha Ha")
   end
 
   it "can recognize a draw" do
-    game1 = Game.new("Paper")
+    game1 = Game.new("Bob", "Paper")
     srand(344)
     expect(game1.score).to eq("It is a draw")
   end
@@ -41,7 +41,7 @@ describe Game do
 end
 
 describe "Game for Two" do
-  let(:game2) { Game.new("Rock", "Rock") }
+  let(:game2) { Game.new("Bob", "Rock", "Rock") }
   it "can have two human inputs" do
     expect(game2.score).to eq("It is a draw")
   end

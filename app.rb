@@ -40,7 +40,8 @@ class RPS < Sinatra::Base
     end
     
     post '/move' do
-      game = Game.new(params[:movee])
+      player1 = Player.create(session[:name_message])
+      game = Game.new(player1.name, params[:movee])
       session[:win_message] = game.score
       session[:option] = game.give_image(game.option)
       session[:user] = game.give_image(game.users_choice)
@@ -48,7 +49,8 @@ class RPS < Sinatra::Base
     end
 
     post '/move-two' do
-      game = Game.new(params[:move1], params[:move2])
+      player1 = Player.create(session[:name1_message])
+      game = Game.new(player1.name, params[:move1], params[:move2])
       session[:win_message] = game.score
       session[:second_player] = game.give_image(game.option)
       session[:first_palyer] = game.give_image(game.users_choice)
