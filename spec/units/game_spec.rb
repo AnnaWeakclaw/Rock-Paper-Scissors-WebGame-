@@ -1,6 +1,7 @@
 require 'game'
 
 describe Game do
+  describe "Game for One" do
   let(:game) { Game.new("Scissors") }
   
   # random_item is private and tested as part of score method
@@ -36,4 +37,12 @@ describe Game do
     game.score
     expect(game.give_image(game.option)).to eq("/images/paper.jpg")
   end
+end
+
+describe "Game for Two" do
+  let(:game2) { Game.new("Rock", "Rock") }
+  it "can have two human inputs" do
+    expect(game2.score).to eq("It is a draw")
+  end
+end
 end

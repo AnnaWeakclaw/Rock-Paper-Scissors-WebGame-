@@ -18,7 +18,8 @@ class Game
   end
 
   def score
-    @option = random_item
+    @option = @second_human
+    @option = random_item if @second_human == "Nothing"
     @option == @users_choice ? winner = "It is a draw"  : winner = calculate
   end
 
