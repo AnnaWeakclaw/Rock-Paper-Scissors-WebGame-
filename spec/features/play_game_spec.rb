@@ -1,11 +1,11 @@
   feature "RockPaperScissors" do
     scenario "shows available options" do
-      sign_and_play
+      sign_and_play_one
       expect(page).to have_content "Rock Paper" 
     end
 
     scenario "player can win with scissors" do
-      sign_and_play
+      sign_and_play_one
       select "Scissors", from: "movee"
       srand(344)
       click_button "Submit my choice"
@@ -13,7 +13,7 @@
     end
 
     scenario "player can draw" do
-      sign_and_play
+      sign_and_play_one
       select "Paper", from: "movee"
       srand(344)
       click_button "Submit my choice"
@@ -21,7 +21,7 @@
     end
 
     scenario "player can lose" do
-      sign_and_play
+      sign_and_play_one
       select "Rock", from: "movee"
       srand(344)
       click_button "Submit my choice"
@@ -29,7 +29,7 @@
     end
 
     scenario "player can play again" do
-      sign_and_play
+      sign_and_play_one
       select "Rock", from: "movee"
       click_button "Submit my choice"
       click_button "Yes"

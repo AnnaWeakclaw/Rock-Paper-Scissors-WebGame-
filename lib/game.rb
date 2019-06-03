@@ -8,6 +8,7 @@ class Game
       { :pair => ["Rock", "Paper"], :win => "Paper" },
       { :pair => ["Paper", "Scissors"], :win => "Scissors" }
     ]
+    # Ideally this would go into view
     @images = [
       {:item => "Rock", :img => "/images/rock.jpg"},
       {:item => "Paper", :img => "/images/paper.jpg"},
