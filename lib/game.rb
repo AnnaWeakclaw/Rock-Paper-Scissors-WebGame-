@@ -18,6 +18,7 @@ class Game
   end
 
   def score
+    # Line below was the only change for two players instead of computer
     @option = @second_human
     @option = random_item if @second_human == "Nothing"
     @option == @users_choice ? winner = "It is a draw"  : winner = calculate
