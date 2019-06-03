@@ -1,8 +1,9 @@
 class Game
   attr_reader :option, :users_choice
-  def initialize(users_choice)
+  def initialize(users_choice, second_human = "Nothing")
     @options = ["Rock", "Paper", "Scissors"]
     @users_choice = users_choice
+    @second_human = second_human
     @template = [
       { :pair => ["Rock", "Scissors"], :win => "Rock" },
       { :pair => ["Rock", "Paper"], :win => "Paper" },
