@@ -21,10 +21,10 @@ class Game
   end
 
    def give_image(option)
-     image_hash = @images.select { |image|
+     image_hash = @images.find { |image|
         image[:item] == option
       }
-      image_hash.first[:img]
+      image_hash[:img]
     end
 
   private
