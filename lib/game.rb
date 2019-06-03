@@ -20,21 +20,9 @@ class Game
     @option == @users_choice ? winner = "It is a draw"  : winner = calculate
   end
 
-  def random_item 
-    choice = rand(3)
-    @options[choice]
-  end
-
-  def give_my_image
-    image_hash = @images.select { |image|
-       image[:item] == @users_choice
-     }
-     image_hash.first[:img]
-   end
-
-   def give_random_image
+   def give_image(option)
      image_hash = @images.select { |image|
-        image[:item] == @option
+        image[:item] == option
       }
       image_hash.first[:img]
     end
@@ -51,4 +39,10 @@ class Game
       }
       winner 
   end
+
+  def random_item 
+    choice = rand(3)
+    @options[choice]
+  end
+
 end
