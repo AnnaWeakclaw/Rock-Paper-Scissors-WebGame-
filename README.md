@@ -11,7 +11,12 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+## Instructions
 
+- clone the repo
+- bundle install
+- run _rackup -p 4567_
+- visit [here](http://localhost:4567) to play the game
 
 ## Bonus level 1: Multiplayer
 
