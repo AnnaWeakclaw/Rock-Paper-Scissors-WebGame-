@@ -5,8 +5,13 @@
   <link rel=stylesheet type=text/css href=/main.css/>
   <body>
 <h2>Hi <%=@name1%> and <%=@name2%>!</h2>
-<form action="/move" method="post">
-<select name="movee" multiple>
+<form action="/move-two" method="post">
+<select name="move1" multiple>
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+<select name="move2" multiple>
   <option value="Rock">Rock</option>
   <option value="Paper">Paper</option>
   <option value="Scissors">Scissors</option>

@@ -1,4 +1,4 @@
-  feature "RockPaperScissors" do
+  feature "RockPaperScissors for one" do
     scenario "shows available options" do
       sign_and_play_one
       expect(page).to have_content "Rock Paper" 
@@ -34,5 +34,12 @@
       click_button "Submit my choice"
       click_button "Yes"
       expect(page).to have_content "Hi Bob" 
+    end
+  end
+
+  feature "RockPaperScissors for two" do
+    scenario "shows available options" do
+      sign_and_play_two
+      expect(page).to have_content "Rock Paper Scissors Rock Paper Scissors" 
     end
   end
