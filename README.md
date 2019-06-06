@@ -1,6 +1,7 @@
 # RPS Challenge
 
-This is a _Rock, Paper, Scissors_ game that you can play against the computer:
+This is a _Rock, Paper, Scissors_ game that you can play against the computer or a friend.
+Please try it out [here]( https://rock-paper-scissors.herokuapp.com)
 
 ```
 As a marketeer
